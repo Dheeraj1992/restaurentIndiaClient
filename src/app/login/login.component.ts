@@ -14,9 +14,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  validateUserByTemplateForms(formdata)
+  {
+    console.log('validateUserByTemplateForms data= '+JSON.stringify(formdata.value));
+    this.checkUser(formdata.value.username,formdata.value.password);
+  }
+
   checkUser(username : string, password : string)
   {
-       console.log(username+password);
+       console.log('checkUser data: '+username+' '+password);
         this.dataManagerService.checkUser(username,password).subscribe((res)=>{
            console.log('data returned= '+JSON.stringify(res));
             this.dataManagerService.currentUser = res.json();

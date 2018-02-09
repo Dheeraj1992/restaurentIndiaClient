@@ -1,11 +1,14 @@
 <div class="wrapper">
-  <form class="form-signin">       
-    <h2 class="form-signin-heading">Please login</h2>
-    <input type="text" #uid id="userName" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
-    <input type="password" #pwd id="userPassword" class="form-control" name="password" placeholder="Password" required=""/>      
-    <!-- <label class="checkbox">
-      <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-    </label> -->
-    <button class="btn btn-lg btn-primary btn-block" (click)="checkUser(uid.value,pwd.value)" type="submit">Login</button>   
+  <form class="form-signin" ngForm #f="ngForm" (ngSubmit)="validateUserByTemplateForms(f)">       
+    <h2 class="form-signin-heading">User Login</h2>
+    <input type="text" #uid="ngModel" ngModel name="username" class="form-control"  placeholder="Username" required minlength="3" pattern="[a-zA-Z0-9]+" />
+    <div class="alert alert-danger" *ngIf="uid.touched && uid.invalid">
+      <div *ngIf="uid.errors.required">Please Enter username</div>
+      <div *ngIf="uid.errors.minlength">Username is too small</div>
+      <div *ngIf="uid.errors.pattern">Username is not valid</div>
+    </div> 
+    <input type="password" #pwd="ngModel" ngModel name="password" class="form-control" placeholder="Password" required minlength="3"/>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button> 
   </form>
 </div>
+

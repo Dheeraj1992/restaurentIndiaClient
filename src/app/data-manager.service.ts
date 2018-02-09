@@ -48,7 +48,7 @@ export class DataManagerService {
       return url;
     }
     else {
-      var url2 = "http://localhost:8080" + path;
+      var url2 = "http://localhost:9080" + path;
       return url2;
     }
   }

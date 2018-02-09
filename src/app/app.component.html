@@ -1,5 +1,8 @@
-
 <div class="container-fluid">
+<div class="row">
 <app-login  *ngIf="!this.dataManagerService.goToHomePage"></app-login>
+</div>
+<div class="row">
 <app-home  *ngIf="this.dataManagerService.goToHomePage"></app-home> 
+</div>
 </div>
