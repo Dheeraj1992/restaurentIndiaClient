@@ -52,18 +52,15 @@ export class LoginComponent implements OnInit {
   {
        console.log('checkUser data: '+username+' '+password);
         this.dataManagerService.checkUser(username,password).subscribe((res)=>{
-           console.log('data returned= '+JSON.stringify(res));
-            this.dataManagerService.currentUser = res.json();
-            if(this.dataManagerService.currentUser!=null && this.dataManagerService.currentUser!=undefined)
+            if(res.json()==true)
             {
-              this.dataManagerService.goToHomePage = true;
-              console.log('user validated');
+            this.dataManagerService.validUser = true;
             }
             else
             {
-            this.dataManagerService.goToHomePage = false;
-            console.log('user not validated');
+            this.dataManagerService.validUser = false;
             }
+
         });
   }
 

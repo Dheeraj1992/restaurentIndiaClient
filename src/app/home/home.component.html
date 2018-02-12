@@ -11,10 +11,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li class="active"><a href="#">Home</a></li>
         <li><a routerLink="/admin/products">Product</a></li>
         <li><a routerLink="/admin/orders">Orders</a></li>
+        <li *ngIf="!this.dataManagerService.validUser"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li *ngIf="this.dataManagerService.validUser"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
     </div>
   </div>

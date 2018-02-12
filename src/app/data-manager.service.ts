@@ -9,20 +9,16 @@ import { User, Product } from './Modals';
 export class DataManagerService {
 
   currentUser: User;
-  goToHomePage: boolean = false;
+
+  validUser: boolean = true;
+
   constructor(private http: Http) { }
 
   
   checkUser(username : string, password : string)
   {
-    return this.http.get(this.getRelativePath("/getUserbyIdAndPassword")+"?username="+username+"&password="+password)
-    // .map(res=>{
-    //   //console.log('response= '+res);
-    //   //if(res!= undefined || res!=null)
-    //   return res.json();
-    //   //else 
-    //   //return null;
-    // });
+    return this.http.get(this.getRelativePath("/getUserbyIdAndPassword")+
+                        +"?username="+username+"&password="+password);
   }
 
   getCategoryGroup()
