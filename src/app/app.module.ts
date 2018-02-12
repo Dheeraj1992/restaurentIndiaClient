@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { DataManagerService } from './data-manager.service';
 
 
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -35,6 +35,7 @@ import { ManageproductsComponent } from './admin/manageproducts/manageproducts.c
     BrowserModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path:'',component:ManageproductsComponent},
       {path:'admin/orders',component:OrdersComponent},

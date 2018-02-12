@@ -1,4 +1,4 @@
-<div class="wrapper">
+<!-- <div class="wrapper">
   <form class="form-signin" ngForm #f="ngForm" (ngSubmit)="validateUserByTemplateForms(f)">       
     <h2 class="form-signin-heading">User Login</h2>
     <input type="text" #uid="ngModel" ngModel name="username" class="form-control"  placeholder="Username" required minlength="3" pattern="[a-zA-Z0-9]+" />
@@ -8,7 +8,20 @@
       <div *ngIf="uid.errors.pattern">Username is not valid</div>
     </div> 
     <input type="password" #pwd="ngModel" ngModel name="password" class="form-control" placeholder="Password" required minlength="3"/>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button> 
+    <button class="btn btn-lg btn-primary btn-block" [disabled]="!f.valid" type="submit">Login</button> 
+  </form>
+</div> -->
+<div class="wrapper">
+  <form class="form-signin" [formGroup]="form" (ngSubmit)="validateUserByReactiveForms()">       
+    <h2 class="form-signin-heading">User Login</h2>
+    <input type="text" class="form-control"  placeholder="Username" formControlName="username"/>
+    <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
+      <div *ngIf="username.errors.required">Please Enter username</div>
+    </div> 
+    <input type="password"class="form-control" placeholder="Password" formControlName="password"/>
+    <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+      <div *ngIf="password.errors.required">Please Enter password</div>
+    </div> 
+    <button class="btn btn-lg btn-primary btn-block" [disabled]="!Form.valid" type="submit">Login</button> 
   </form>
 </div>
-

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataManagerService } from '../data-manager.service';
 import { User } from '../Modals';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,33 @@ export class LoginComponent implements OnInit {
   constructor(private dataManagerService: DataManagerService) { }
 
   ngOnInit() {
+  }
+
+  form = new FormGroup({
+    username : new FormControl('',Validators.required),
+    password : new FormControl('',Validators.required)
+  });
+
+  validateUserByReactiveForms()
+  {
+    console.log('validateUserByReactiveForms data= '+JSON.stringify(this.form.value));
+    this.checkUser(this.form.value.username,this.form.value.password);
+  }
+
+  get username()
+  {
+    return this.form.get('username');
+  }
+
+  get password()
+  {
+    return this.form.get('password');
+  }
+
+  
+  get Form()
+  {
+    return this.form;
   }
 
   validateUserByTemplateForms(formdata)
