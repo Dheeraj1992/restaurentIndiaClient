@@ -34,6 +34,11 @@ export class DataManagerService {
 
   }
 
+  getAllProducts() {
+    return this.http.get(this.getRelativePath("/getAllProducts"))
+    .map(res => res.json());
+  }
+
   // Get complete path to endpoint irrespective of application host. 
   getRelativePath(path) {
     var protocol = window.location.protocol;

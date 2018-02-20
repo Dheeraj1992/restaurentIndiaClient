@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../Modals';
+import { DataManagerService } from '../data-manager.service';
 
 @Component({
   selector: 'app-mainpage',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainpageComponent implements OnInit {
 
-  constructor() { }
+  products : Array<Product>;
+  constructor(private dataManagerService:DataManagerService) {
+    dataManagerService.getAllProducts().subscribe((res: Product[])=>
+    {
+      this.products=res
+    });
+   }
 
   ngOnInit() {
   }
