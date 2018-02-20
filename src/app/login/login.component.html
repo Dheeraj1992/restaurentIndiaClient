@@ -22,7 +22,7 @@
     <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
       <div *ngIf="password.errors.required">Please Enter password</div>
     </div> 
-    <div class="alert alert-danger" *ngIf="!this.dataManagerService.validUser">
+    <div class="alert alert-danger" *ngIf="!this.dataManagerService.validUser && Form.valid">
       User Name or Password is wrong
     </div>
     <button class="btn btn-lg btn-primary btn-block" [disabled]="!Form.valid" type="submit">Login</button> 

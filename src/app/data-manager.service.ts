@@ -10,14 +10,14 @@ export class DataManagerService {
 
   currentUser: User;
 
-  validUser: boolean = true;
+  validUser: boolean = false;
 
   constructor(private http: Http) { }
 
   
   checkUser(username : string, password : string)
   {
-    return this.http.get(this.getRelativePath("/getUserbyIdAndPassword")+
+    return this.http.get(this.getRelativePath("/getUserbyIdAndPassword")
                         +"?username="+username+"&password="+password);
   }
 

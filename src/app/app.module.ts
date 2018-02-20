@@ -1,5 +1,6 @@
+import { MainpageComponent } from './mainpage/mainpage.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { DataManagerService } from './data-manager.service';
 
 
@@ -17,6 +18,7 @@ import { HttpModule } from '@angular/http';
 import { FooterComponent } from './footer/footer.component';
 import {RouterModule} from '@angular/router';
 import { ManageproductsComponent } from './admin/manageproducts/manageproducts.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ManageproductsComponent } from './admin/manageproducts/manageproducts.c
     BsNavbarComponent,
     OrdersComponent,
     FooterComponent,
-    ManageproductsComponent
+    ManageproductsComponent,
+    HeaderComponent,
+    MainpageComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +41,9 @@ import { ManageproductsComponent } from './admin/manageproducts/manageproducts.c
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path:'',component:ManageproductsComponent},
-      {path:'admin/orders',component:OrdersComponent},
-      {path:'admin/products',component:ManageproductsComponent}
+      {path:'',component:MainpageComponent},
+      {path:'categories',component:CategoryComponent},
+      {path:'products',component:ProductsComponent}
   ])
   ],
   providers: [DataManagerService],

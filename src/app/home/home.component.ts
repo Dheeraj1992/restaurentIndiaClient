@@ -8,7 +8,7 @@ import { DataManagerService } from '../data-manager.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private dataManagerService: DataManagerService) { }
+  constructor() { }
 
   ngOnInit() {
    

@@ -11,12 +11,11 @@ export class CategoryComponent implements OnInit {
 
   cg: CategoryGroup;
   constructor(private dataManagerService:DataManagerService) { 
-  //   this.dataManagerService.getCategoryGroup().subscribe((res:CategoryGroup)=>
-  //  {
-  //   this.cg = res;
-  //   console.log(' this.cg '+JSON.stringify( this.cg));
-  //  });
- 
+    this.dataManagerService.getCategoryGroup().subscribe((res:CategoryGroup)=>
+   {
+    this.cg = res;
+    console.log(' this.cg '+JSON.stringify( this.cg));
+   });
   }
 
   getProductsByCategory(categoryid)
