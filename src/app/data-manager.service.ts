@@ -12,6 +12,8 @@ export class DataManagerService {
 
   validUser: boolean = false;
 
+  products:  Array<Product>;
+
   constructor(private http: Http) { }
 
   
@@ -35,8 +37,21 @@ export class DataManagerService {
   }
 
   getAllProducts() {
-    return this.http.get(this.getRelativePath("/getAllProducts"))
-    .map(res => res.json());
+   this.http.get(this.getRelativePath("/getAllProducts"))
+   .subscribe((res)=> this.products= res.json());
+  }
+
+  getProductsByCategoryGroup(groupId)
+  {
+    return this.http.get(this.getRelativePath("/getProductsByCategoryGroup"+"?groupId="+groupId))
+    .subscribe((res)=> this.products= res.json());
+  }
+
+  getProductsByCategoryGroupAndCategory(groupId,categoryId)
+  {
+    return this.http.get(this.getRelativePath("/getProductsByCategoryGroupAndCategory"+
+    "?groupId="+groupId+"&categoryId="+categoryId))
+    .subscribe((res)=> this.products= res.json());
   }
 
   // Get complete path to endpoint irrespective of application host. 

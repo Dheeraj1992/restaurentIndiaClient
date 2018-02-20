@@ -9,12 +9,8 @@ import { DataManagerService } from '../data-manager.service';
 })
 export class MainpageComponent implements OnInit {
 
-  products : Array<Product>;
   constructor(private dataManagerService:DataManagerService) {
-    dataManagerService.getAllProducts().subscribe((res: Product[])=>
-    {
-      this.products=res
-    });
+      this.dataManagerService.getAllProducts();
    }
 
   ngOnInit() {

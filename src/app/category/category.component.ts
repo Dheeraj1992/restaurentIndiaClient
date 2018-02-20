@@ -18,9 +18,17 @@ export class CategoryComponent implements OnInit {
    });
   }
 
-  getProductsByCategory(categoryid)
+  getProductsByCategoryGroupAndCategory(categoryGroupid,categoryid)
   {
+    console.log('categoryGroupid='+categoryGroupid);
     console.log('categoryid='+categoryid);
+    this.dataManagerService.getProductsByCategoryGroupAndCategory(categoryGroupid,categoryid);
+  }
+
+  getProductsByCategoryGroup(categoryGroupid)
+  {
+    console.log('categoryGroupid='+categoryGroupid);
+    this.dataManagerService.getProductsByCategoryGroup(categoryGroupid);
   }
 
   ngOnInit() {
