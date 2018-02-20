@@ -10,9 +10,10 @@ import { DataManagerService } from '../data-manager.service';
 export class ProductsComponent implements OnInit {
   
   @Input() products:  Array<Product>;
-  constructor() { }
+  constructor(private dataManagerService:DataManagerService) { }
 
   ngOnInit() {
+    this.products= this.dataManagerService.products;
   }
 
 }
