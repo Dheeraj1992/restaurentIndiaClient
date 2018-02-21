@@ -56,11 +56,10 @@ export class Product
     imageUrl: string;
     
     hasOffer: boolean;
-    offerId: number;
+    offerPercent: number;
     addedBy: number;
     dateAdded: Date;
     updatedBy: number;
     dateModified: Date;
     isActive: Boolean;
-    isDeleted: Boolean;
 }

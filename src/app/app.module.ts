@@ -19,6 +19,10 @@ import { FooterComponent } from './footer/footer.component';
 import {RouterModule} from '@angular/router';
 import { ManageproductsComponent } from './admin/manageproducts/manageproducts.component';
 import { HeaderComponent } from './header/header.component';
+import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
+import { AddproductComponent } from './admin/addproduct/addproduct.component';
+import { UpdateproductComponent } from './admin/updateproduct/updateproduct.component';
+import { DeleteproductComponent } from './admin/deleteproduct/deleteproduct.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { HeaderComponent } from './header/header.component';
     FooterComponent,
     ManageproductsComponent,
     HeaderComponent,
-    MainpageComponent
+    MainpageComponent,
+    AdminhomeComponent,
+    AddproductComponent,
+    UpdateproductComponent,
+    DeleteproductComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +51,11 @@ import { HeaderComponent } from './header/header.component';
     RouterModule.forRoot([
       {path:'',component:MainpageComponent},
       {path:'categories',component:CategoryComponent},
-      {path:'products',component:ProductsComponent}
+      {path:'products',component:ProductsComponent},
+      {path:'admin',component:AdminhomeComponent},
+      {path:'admin/addProduct',component:AddproductComponent},
+      {path:'admin/updateProduct',component:UpdateproductComponent},
+      {path:'admin/deleteProduct',component:DeleteproductComponent}
   ])
   ],
   providers: [DataManagerService],

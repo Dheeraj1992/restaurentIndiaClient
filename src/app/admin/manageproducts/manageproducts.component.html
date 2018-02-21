@@ -1,9 +1,4 @@
-<form  #f="ngForm"  ngForm (ngSubmit)="addproduct(f)">
-  <!--FormControl objects--><br>
-  Product Name: <input type="text" ngModel name="productName"><br>
-  Product Description: <input type="text" ngModel name="productDescription"><br>
-  Price: <input type="text" ngModel name="price"><br>
-  SubCategory Id:<input type="text" ngModel name="subcategoryId"><br>
-  ImageUrL: <input type="text" ngModel name="imageUrl"><br><br>
-  <button type="submit">Add Product</button>
-</form>
+<a class="btn" routerLink="/admin/addProduct">Add Product</a>
+<a class="btn" routerLink="/admin/updateProduct">Update Product</a>
+<a class="btn" routerLink="/admin/deleteProduct">Delete Product</a>
+<router-outlet></router-outlet>
