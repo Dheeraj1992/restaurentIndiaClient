@@ -24,6 +24,8 @@ import { AddproductComponent } from './admin/addproduct/addproduct.component';
 import { UpdateproductComponent } from './admin/updateproduct/updateproduct.component';
 import { DeleteproductComponent } from './admin/deleteproduct/deleteproduct.component';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,11 +50,12 @@ import { DeleteproductComponent } from './admin/deleteproduct/deleteproduct.comp
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
+    BsDropdownModule.forRoot(),
     RouterModule.forRoot([
       {path:'',component:MainpageComponent},
       {path:'categories',component:CategoryComponent},
       {path:'products',component:ProductsComponent},
-      {path:'admin',component:AdminhomeComponent},
+      {path:'admin',component:ManageproductsComponent},
       {path:'admin/addProduct',component:AddproductComponent},
       {path:'admin/updateProduct',component:UpdateproductComponent},
       {path:'admin/deleteProduct',component:DeleteproductComponent}
