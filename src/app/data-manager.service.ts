@@ -60,6 +60,15 @@ export class DataManagerService {
     .map(res => res.json());
   }
 
+  createUser(user:User )
+  {
+    console.log('calling createUser');
+    this.http.post(this.getRelativePath("/saveUser"),user).subscribe((res)=>
+  {
+      console.log('User saved: '+JSON.stringify(res));
+  });
+  }
+
   // Get complete path to endpoint irrespective of application host. 
   getRelativePath(path) {
     var protocol = window.location.protocol;

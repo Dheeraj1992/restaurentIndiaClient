@@ -13,6 +13,7 @@ export class User
     isAdmin:boolean;
     dateAdded:Date;
     dateModified:Date;
+    cart : Cart;
 }
 
 export class CategoryGroup
@@ -62,4 +63,13 @@ export class Product
     updatedBy: number;
     dateModified: Date;
     isActive: Boolean;
+}
+
+export class Cart {
+
+	productCartId: number;
+	cartId: number;
+	productId: number;
+	quantity: number;
+    dateAdded: Date;
 }

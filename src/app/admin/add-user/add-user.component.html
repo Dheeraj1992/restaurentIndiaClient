@@ -1,0 +1,7 @@
+<div class="row">
+  <form #form="ngForm" (ngSubmit)="createUser(form)">
+    Username : <input type="text" ngModel name="username" >
+    Password : <input type="text" ngModel name="password">
+    <input type="submit" value="Create User">
+  </form>
+</div>

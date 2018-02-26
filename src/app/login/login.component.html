@@ -8,6 +8,10 @@
       <div *ngIf="uid.errors.pattern">Username is not valid</div>
     </div> 
     <input type="password" #pwd="ngModel" ngModel name="password" class="form-control" placeholder="Password" required minlength="3"/>
+    <div class="alert alert-danger" *ngIf="uid.touched && uid.invalid">
+      <div *ngIf="pwd.errors.required">Please Enter Password</div>
+      <div *ngIf="pwd.errors.minlength">Password is too small</div>
+    </div> 
     <button class="btn btn-lg btn-primary btn-block" [disabled]="!f.valid" type="submit">Login</button> 
   </form>
 </div> -->
@@ -27,4 +31,4 @@
     </div>
     <button class="btn btn-lg btn-primary btn-block" [disabled]="!Form.valid" type="submit">Login</button> 
   </form>
-</div>
+</div> 

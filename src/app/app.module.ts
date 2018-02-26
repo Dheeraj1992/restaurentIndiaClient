@@ -25,6 +25,7 @@ import { UpdateproductComponent } from './admin/updateproduct/updateproduct.comp
 import { DeleteproductComponent } from './admin/deleteproduct/deleteproduct.component';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { AddUserComponent } from './admin/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     AdminhomeComponent,
     AddproductComponent,
     UpdateproductComponent,
-    DeleteproductComponent
+    DeleteproductComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
