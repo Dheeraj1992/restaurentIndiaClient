@@ -20,9 +20,17 @@ export class AddUserComponent implements OnInit {
     this.user=new User();
     this.user.username=formdata.value.username;
     this.user.password=formdata.value.password;
+    this.user.firstname=formdata.value.firstname;
+    this.user.lastname=formdata.value.lastname;
+    this.user.mobile=formdata.value.mobile;
+    this.user.email=formdata.value.email;
+    this.user.imageUrl=formdata.value.imageUrl;
+    this.user.isAdmin=formdata.value.isAdmin;
+    this.user.dateAdded= new Date();
+    this.user.dateModified=new Date();
+
     this.user.cart= new Cart();
-    this.user.cart.cartId=3;
-    this.user.cart.dateAdded=new Date();
+    this.user.cart.dateCreated=new Date();
     console.log('this.user='+JSON.stringify(this.user));
     this.dataManagerService.createUser(this.user);
   }

@@ -66,10 +66,6 @@ export class Product
 }
 
 export class Cart {
-
-	productCartId: number;
 	cartId: number;
-	productId: number;
-	quantity: number;
-    dateAdded: Date;
+    dateCreated: Date;
 }

@@ -1,4 +1,6 @@
-<!-- <div class="wrapper">
+<!--Template-driven forms -->
+
+<div class="wrapper">
   <form class="form-signin" ngForm #f="ngForm" (ngSubmit)="validateUserByTemplateForms(f)">       
     <h2 class="form-signin-heading">User Login</h2>
     <input type="text" #uid="ngModel" ngModel name="username" class="form-control"  placeholder="Username" required minlength="3" pattern="[a-zA-Z0-9]+" />
@@ -14,8 +16,10 @@
     </div> 
     <button class="btn btn-lg btn-primary btn-block" [disabled]="!f.valid" type="submit">Login</button> 
   </form>
-</div> -->
-<div class="wrapper">
+</div>
+
+<!--Reactive forms -->
+<!-- <div class="wrapper">
   <form class="form-signin" [formGroup]="form" (ngSubmit)="validateUserByReactiveForms()">       
     <h2 class="form-signin-heading">User Login</h2>
     <input type="text" class="form-control"  placeholder="Username" formControlName="username"/>
@@ -31,4 +35,4 @@
     </div>
     <button class="btn btn-lg btn-primary btn-block" [disabled]="!Form.valid" type="submit">Login</button> 
   </form>
-</div> 
+</div>  -->
