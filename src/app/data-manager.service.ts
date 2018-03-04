@@ -23,6 +23,12 @@ export class DataManagerService {
                         +"?username="+username+"&password="+password);
   }
 
+  checkUserId(userid:string)
+  {
+    return this.http.get(this.getRelativePath("/getUserById")
+                        +"?userid="+userid);
+  }
+
   getCategoryGroup()
   {
     return this.http.get(this.getRelativePath("/getAllCategoryGroups")).

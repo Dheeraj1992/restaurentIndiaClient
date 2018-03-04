@@ -1,6 +1,6 @@
 <!--Template-driven forms -->
 
-<div class="wrapper">
+<!-- <div class="wrapper">
   <form class="form-signin" ngForm #f="ngForm" (ngSubmit)="validateUserByTemplateForms(f)">       
     <h2 class="form-signin-heading">User Login</h2>
     <input type="text" #uid="ngModel" ngModel name="username" class="form-control"  placeholder="Username" required minlength="3" pattern="[a-zA-Z0-9]+" />
@@ -16,15 +16,18 @@
     </div> 
     <button class="btn btn-lg btn-primary btn-block" [disabled]="!f.valid" type="submit">Login</button> 
   </form>
-</div>
+</div> -->
 
 <!--Reactive forms -->
-<!-- <div class="wrapper">
+<div class="wrapper">
   <form class="form-signin" [formGroup]="form" (ngSubmit)="validateUserByReactiveForms()">       
     <h2 class="form-signin-heading">User Login</h2>
     <input type="text" class="form-control"  placeholder="Username" formControlName="username"/>
+    <div *ngIf="username.pending">Checking for UserName...</div>
     <div class="alert alert-danger" *ngIf="username.touched && username.invalid">
       <div *ngIf="username.errors.required">Please Enter username</div>
+      <div *ngIf="username.errors.cannotContainSpace">Username contains space</div>
+      <div *ngIf="username.errors.shoulBeUnique">Username should be unique</div>
     </div> 
     <input type="password"class="form-control" placeholder="Password" formControlName="password"/>
     <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
@@ -35,4 +38,4 @@
     </div>
     <button class="btn btn-lg btn-primary btn-block" [disabled]="!Form.valid" type="submit">Login</button> 
   </form>
-</div>  -->
+</div> 

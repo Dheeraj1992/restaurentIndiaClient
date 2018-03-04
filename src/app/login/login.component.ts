@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataManagerService } from '../data-manager.service';
 import { User } from '../Modals';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UsernameValidators } from '../validators/username.validators';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,13 @@ export class LoginComponent implements OnInit {
   }
 
   form = new FormGroup({
-    username : new FormControl('',[Validators.required,Validators.minLength(3)]),
+    username : new FormControl('',
+    [Validators.required,
+      Validators.minLength(3),
+      UsernameValidators.cannotContainSpace,
+      new UsernameValidators(this.dataManagerService).shouldBeUnique
+    ]
+    ),
     password : new FormControl('',Validators.required)
   });
 
